@@ -2,7 +2,7 @@ var async = require('async');
 const { Quiz } = require('../models');
 const fetch = require('node-fetch');
 
-module.exports = {
+let _self = {
     importQuiz: (req, res) => {
         async.waterfall([
             (nextCall) => {
@@ -97,3 +97,5 @@ module.exports = {
         })
     }
 }
+
+module.exports = _self
