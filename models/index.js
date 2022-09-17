@@ -1,7 +1,7 @@
 const User = require('./user');
 const Quiz = require('./quiz');
 
-module.exports= {
+module.exports = {
     User,
     Quiz
 }

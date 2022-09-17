@@ -1,12 +1,11 @@
 var async = require('async');
 var moment = require('moment');
 var mongoose = require('mongoose');
-const User = require('../models/user')
-const { decrypt, encrypt } = require('../utils/encryDecry')
-const { validationResult } = require('express-validator')
-const jwt = require('jsonwebtoken')
-const config = require('../config')
-
+const User = require('../models/user');
+const { decrypt, encrypt } = require('../utils/encryDecry');
+const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
+const config = require('../config');
 
 module.exports = {
     register: (req, res) => {
@@ -177,7 +176,7 @@ module.exports = {
                 aggregateQuery.push({
                     $match: {
                         _id: mongoose.Types.ObjectId(req.user._id),
-                        scorecard:{$ne:[]}
+                        scorecard: { $ne: [] }
                     }
 
                 })
@@ -269,7 +268,7 @@ module.exports = {
                                 name: "$name",
                                 difficulty: "$scorecard.difficulty",
                                 email: "$email",
-                                played_at:{ $dateToString: { format: "%Y-%m-%d", date: "$scorecard.played_at" } }
+                                played_at: { $dateToString: { format: "%Y-%m-%d", date: "$scorecard.played_at" } }
                             }
                         }
                     }
@@ -297,5 +296,4 @@ module.exports = {
             })
         })
     }
-
 }

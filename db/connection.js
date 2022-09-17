@@ -1,14 +1,14 @@
-const mongoose = require('mongoose')
-const config = require('../config')
+const mongoose = require('mongoose');
+const config = require('../config');
 
-let connection = mongoose.connect(config.connectionString, { useNewUrlParser: true ,useUnifiedTopology: true})
+let connection = mongoose.connect(config.connectionString, { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connection.on('connected',()=>{
+mongoose.connection.on('connected', () => {
     console.log("DB connected successfully.")
-})
+});
 
-mongoose.connection.on('error',err=>{
-    console.log("DB ERROR:",err)
-})
+mongoose.connection.on('error', err => {
+    console.log("DB ERROR:", err)
+});
 
-module.exports = connection
+module.exports = connection;

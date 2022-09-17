@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 
 const encrypt = (password) => {
     const saltRounds = 10;
@@ -7,9 +7,9 @@ const encrypt = (password) => {
     return hash;
 }
 
-const decrypt = (password,hash)=>{
-    const result = bcrypt.compareSync(password, hash); 
+const decrypt = (password, hash) => {
+    const result = bcrypt.compareSync(password, hash);
     return result
 }
 
-module.exports = {encrypt,decrypt}
+module.exports = { encrypt, decrypt }

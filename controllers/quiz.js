@@ -80,21 +80,20 @@ module.exports = {
                     q.options = _self.shuffleArray(q.options)
                 })
                 quiz = _self.shuffleArray(quiz)
-                nextCall(null,quiz)
+                nextCall(null, quiz)
             }
-        ], (err, response) => { 
-            if(err){
+        ], (err, response) => {
+            if (err) {
                 return res.status(400).json({
-                    message : (err && err.message) || 'Oops! Failed to get quiz.'
+                    message: (err && err.message) || 'Oops! Failed to get quiz.'
                 })
             }
 
             res.json({
-                status:'success',
-                message:'Quiz',
+                status: 'success',
+                message: 'Quiz',
                 data: response
             })
         })
     }
-
 }

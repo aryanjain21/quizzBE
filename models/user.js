@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
 const moment = require('moment');
-const { encrypt } = require('../utils/encryDecry')
+const { encrypt } = require('../utils/encryDecry');
 
 const userSchema = new Schema({
     name: {
@@ -43,4 +43,4 @@ userSchema.pre('save', function (next) {
     next()
 })
 
-module.exports = model(userSchema.options.collection, userSchema)
+module.exports = model(userSchema.options.collection, userSchema);
